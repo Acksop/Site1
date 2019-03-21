@@ -24,9 +24,13 @@ class Url
 
 	//print_r($urlParts);
 	//Récupération du nom de la page
-	($urlParts[0] == 'index' || $urlParts[0] == '' ) ? $page['name']='accueil' : $page['name']=$urlParts[0];
-        //array_shift($urlParts);
-        unset($urlParts[0]);
+        if(isset($urlParts[0])) {
+            ($urlParts[0] == 'index' || $urlParts[0] == '') ? $page['name'] = 'accueil' : $page['name'] = $urlParts[0];
+            //array_shift($urlParts);
+            unset($urlParts[0]);
+        }else{
+            $page['name'] = 'accueil';
+        }
 
 	if($page['name'] == 'control'){
 	    $page['control'] = true;

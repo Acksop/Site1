@@ -1,6 +1,7 @@
 <?php
 
 define( "LAYOUT_PATH" , APPLICATION_PATH . DIRECTORY_SEPARATOR . "layout");
+include CLASSES_PATH . DIRECTORY_SEPARATOR . "asynchronous.class.php";
 
 
 class Vue{
@@ -11,6 +12,8 @@ class Vue{
 	public function __construct($baseControlleur){
 		
 		extract( $baseControlleur->modele->page );
+
+		$asynchroneLoader = new Asyncronous();
 
 		ob_start();
         require CONTROLLER_PATH.DIRECTORY_SEPARATOR.$name.'.php';
