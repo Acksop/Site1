@@ -9,7 +9,6 @@ class Url
 
 	$page = array();
 	$page['name'] = 'accueil';
-	$page['description'] = "";
 	$page['params'] = array();
 	$page['control'] = false;
 

@@ -2,4 +2,5 @@ name : accueil
 page_title : Accueil de l'application
 description : zatou stra bracadabla
 params : params
+array-params : { val1 , val2, int1, int2 }
 
