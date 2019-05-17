@@ -79,7 +79,7 @@ class Tri{
         if($ip_debut_cmp == 0){
             //égal
             if ($ip_fin_cmp == 0) {
-                return 'sont égaux';
+                return 'est égal avec';
             }
             return 'chevauche par le debut (egalité debut)';
 
