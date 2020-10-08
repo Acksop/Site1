@@ -1,9 +1,10 @@
 <?php
 
+namespace MVC\Classe;
+
 class Url
 {
 	public $page;
-	
 	
 	public function __construct(){
 
@@ -12,12 +13,16 @@ class Url
 	$page['params'] = array();
 	$page['control'] = false;
 
+	//définition du layout html à charger
+	$page['layout'] = 'standard';
+
 
 
 	$url = parse_url($_SERVER['REQUEST_URI']);
 	$urlTrim = trim( $url['path'] , '/' );
 	$urlParts = explode('/' , $urlTrim );
 
+<<<<<<< HEAD:application/class/url.class.php
 	array_shift($urlParts);
 	array_shift($urlParts);
 
@@ -30,11 +35,20 @@ class Url
         }else{
             $page['name'] = 'accueil';
         }
+=======
+    if(isset($urlParts[0])) {
+        //Récupération du nom de la page
+        ($urlParts[0] == 'index' || $urlParts[0] == '') ? $page['name'] = 'accueil' : $page['name'] = $urlParts[0];
+        unset($urlParts[0]);
+    }else{
+        $page['name'] = 'accueil';
+    }
+>>>>>>> nude-composer:application/class/Url.php
 
+	//vérification si c'est une page de traitement
 	if($page['name'] == 'control'){
 	    $page['control'] = true;
         ($urlParts[1] == 'index' || $urlParts[1] == '' ) ? $page['name']='accueil' : $page['name']=$urlParts[1];
-        //array_shift($urlParts);
         unset($urlParts[1]);
 
     }
@@ -73,6 +87,9 @@ class Url
 	if(!file_exists($pageFile)){
 		$page['name'] = 'error';
 	}
+
 	$this->page = $page;
+
+	return;
 	}
 }

@@ -1,13 +1,12 @@
 <?php
 
-error_reporting(-1);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-define("APPLICATION_PATH", dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."application");
-define("CLASSES_PATH", APPLICATION_PATH.DIRECTORY_SEPARATOR."class");
+define("VENDOR_PATH", dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."vendor");
+//require APPLICATION_PATH.DIRECTORY_SEPARATOR."autoloader.php";
+require VENDOR_PATH.DIRECTORY_SEPARATOR."autoload.php";
 
-
-require CLASSES_PATH.DIRECTORY_SEPARATOR."application.class.php";
-
-$poo_v1 = new Application();
-$poo_v1->launch();
+$poo_v2 = new \MVC\Classe\Application();
+$poo_v2->launch();

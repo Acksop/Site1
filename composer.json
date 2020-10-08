@@ -1,0 +1,12 @@
+{
+    "autoload": {
+
+        "files": ["./application/parameters.php"],
+
+        "psr-4": {
+            "MVC\\Classe\\":"./application/class",
+            "MVC\\Objets\\":"./application/objets"
+        }
+        
+    }
+}

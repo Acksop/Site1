@@ -1,8 +1,12 @@
 <phpunit colors="true">
   <testsuites>
     <testsuite name="Objet_Fichier">
+<<<<<<< HEAD
       <file>./TriTest.class.php</file>
       <file>./Test.php</file>
+=======
+      <file>./EmailTest.php</file>
+>>>>>>> nude-composer
     </testsuite>
   </testsuites>
   
